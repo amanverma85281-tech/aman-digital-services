@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aman Digital services | Online Digital Services</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f5f7fb;
+            color: #222;
+        }
+
+        /* Navbar */
+
+        nav {
+            background-color: #0d47a1;
+            color: white;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #ffca28;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #ffca28;
+        }
+
+        /* Hero */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #0d47a1, #1976d2);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #ffca28;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            background-color: #ffca28;
+            color: #222;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background-color: white;
+        }
+
+        .btn2 {
+            background-color: white;
+            color: #0d47a1;
+        }
+
+        /* Common Section */
+
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+            color: #0d47a1;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        /* About */
+
+        .about {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-box {
+            flex: 1;
+        }
+
+        .about-box h2 {
+            color: #0d47a1;
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+
+        .about-box p {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .about-card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .about-card h3 {
+            font-size: 60px;
+            color: #0d47a1;
+        }
+
+        .about-card p {
+            color: #555;
+        }
+
+        /* Services */
+
+        .services {
+            background-color: #eef3f9;
+        }
+
+        .service-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            color: #0d47a1;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Why Us */
+
+        .why-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .why-card {
+            background-color: white;
+            padding: 30px 15px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .why-card h3 {
+            color: #0d47a1;
+            margin: 12px 0;
+        }
+
+        .why-card p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Contact */
+
+        .contact {
+            background-color: #eef3f9;
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 40px;
+        }
+
+        .contact-info,
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .contact-info h3,
+        .contact-form h3 {
+            color: #0d47a1;
+            margin-bottom: 20px;
+            font-size: 25px;
+        }
+
+        .contact-info p {
+            margin: 15px 0;
+            color: #555;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .contact-form textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            background-color: #0d47a1;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #1565c0;
+        }
+
+        /* Footer */
+
+        footer {
+            background-color: #082b63;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        footer h2 {
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #ddd;
+            margin: 8px 0;
+        }
+
+        /* WhatsApp */
+
+        .whatsapp {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background-color: #25d366;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 27px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 999;
+        }
+
+
+        .service-price {
+            margin: 15px 0;
+            color: #555;
+            font-weight: bold;
+        }
+
+        .service-price span {
+            color: #0d47a1;
+        }
+
+        .service-btn {
+            display: inline-block;
+            padding: 11px 18px;
+            background-color: #25d366;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .service-btn:hover {
+            background-color: #1ebe5d;
+        }
+
+        .popular {
+            position: relative;
+            border: 2px solid #ffca28;
+        }
+
+        .popular-badge {
+            display: inline-block;
+            background-color: #ffca28;
+            color: #222;
+            padding: 4px 9px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .call-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 11px 18px;
+            background-color: #0d47a1;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .call-btn:hover {
+            background-color: #1565c0;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 900px) {
+
+            .service-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about,
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .service-container,
+            .why-container {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 50px 5%;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav>
+
+        <div class="logo">
+            Aman <span>Digital Services</span>
+        </div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- Home -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Welcome to <span>Aman Digital services</span>
+            </h1>
+
+            <p>
+                आपके सभी Online और Digital काम एक ही जगह पर।
+                Fast, Reliable और आसान Digital Services.
+            </p>
+
+            <a href="#services" class="btn">
+                Our Services
+            </a>
+
+            <a href="#contact" class="btn btn2">
+                Contact Us
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+
+    <section id="about">
+
+        <div class="section-title">
+
+            <h2>About Us</h2>
+
+            <p>
+                Aman Digital services के बारे में
+            </p>
+
+        </div>
+
+        <div class="about">
+
+            <div class="about-box">
+
+                <h2>Aman Digital services</h2>
+
+                <p>
+                    Aman Digital services एक भरोसेमंद Digital Service Center है,
+                    जहाँ आपको विभिन्न प्रकार की Online और Digital Services
+                    आसानी से मिल सकती हैं।
+                </p>
+
+                <p>
+                    हमारा उद्देश्य लोगों को fast, simple और reliable
+                    digital services उपलब्ध कराना है।
+                </p>
+
+                <a href="#contact" class="btn">
+                    Contact Us
+                </a>
+
+            </div>
+
+
+            <div class="about-box">
+
+                <div class="about-card">
+
+                    <h3>100%</h3>
+
+                    <p>
+                        Customer Satisfaction
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Services -->
+    <section class="services" id="services">
+
+        <div class="section-title">
+            <h2>Our Digital Services</h2>
+            <p>अपनी जरूरत की service चुनें और WhatsApp पर enquiry करें।</p>
+        </div>
+
+        <div class="service-container">
+
+            <div class="service-card popular">
+                <div class="popular-badge">POPULAR</div>
+                <div class="service-icon">📄</div>
+                <h3>Online Form Filling</h3>
+                <p>Online forms और applications भरने में सहायता।</p>
+                <div class="service-price">Starting from <span>₹50</span></div>
+                <a href="javascript:void(0)" onclick="getService('Online Form Filling')" class="service-btn">💬 Get Service</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏛️</div>
+                <h3>Government Online Assistance</h3>
+                <p>सरकारी portals और online applications में सहायता।</p>
+                <div class="service-price">Starting from <span>₹50</span></div>
+                <a href="javascript:void(0)" onclick="getService('Government Online Assistance')" class="service-btn">💬 Get Service</a>
+            </div>
+
+            <div class="service-card popular">
+                <div class="popular-badge">POPULAR</div>
+                <div class="service-icon">🪪</div>
+                <h3>PAN Related Assistance</h3>
+                <p>PAN application और उससे जुड़े online काम में सहायता।</p>
+                <div class="service-price">Starting from <span>₹100</span></div>
+                <a href="javascript:void(0)" onclick="getService('PAN Related Assistance')" class="service-btn">💬 Get Service</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📝</div>
+                <h3>Online Applications</h3>
+                <p>Government और private online applications में सहायता।</p>
+                <div class="service-price">Starting from <span>₹50</span></div>
+                <a href="javascript:void(0)" onclick="getService('Online Applications')" class="service-btn">💬 Get Service</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🖨️</div>
+                <h3>Print &amp; Scan</h3>
+                <p>Printing, scanning और document preparation services।</p>
+                <div class="service-price">Starting from <span>₹5</span></div>
+                <a href="javascript:void(0)" onclick="getService('Print and Scan')" class="service-btn">💬 Get Service</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📸</div>
+                <h3>Photo &amp; Document Work</h3>
+                <p>Photo resize, document formatting और basic digital work।</p>
+                <div class="service-price">Starting from <span>₹30</span></div>
+                <a href="javascript:void(0)" onclick="getService('Photo and Document Work')" class="service-btn">💬 Get Service</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>Mobile &amp; Digital Services</h3>
+                <p>Mobile और सामान्य digital काम में सहायता।</p>
+                <div class="service-price">Starting from <span>₹50</span></div>
+                <a href="javascript:void(0)" onclick="getService('Mobile and Digital Services')" class="service-btn">💬 Get Service</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💳</div>
+                <h3>Bill Payment Assistance</h3>
+                <p>Online bill payment और payment-related assistance।</p>
+                <div class="service-price">Service charge <span>₹10+</span></div>
+                <a href="javascript:void(0)" onclick="getService('Bill Payment Assistance')" class="service-btn">💬 Get Service</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📑</div>
+                <h3>Document Services</h3>
+                <p>Documents को तैयार करने और online submission में सहायता।</p>
+                <div class="service-price">Starting from <span>₹50</span></div>
+                <a href="javascript:void(0)" onclick="getService('Document Services')" class="service-btn">💬 Get Service</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔎</div>
+                <h3>Other Digital Services</h3>
+                <p>कोई दूसरा digital काम है? WhatsApp पर पूछें।</p>
+                <div class="service-price">Price <span>Work के अनुसार</span></div>
+                <a href="javascript:void(0)" onclick="getService('Other Digital Services')" class="service-btn">💬 Get Service</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Why Us -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>Why Choose Us?</h2>
+
+            <p>
+                Aman Digital services को क्यों चुनें?
+            </p>
+
+        </div>
+
+
+        <div class="why-container">
+
+
+            <div class="why-card">
+
+                <div class="service-icon">⚡</div>
+
+                <h3>Fast Service</h3>
+
+                <p>
+                    आपके काम को जल्दी पूरा करने की कोशिश।
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="service-icon">🔒</div>
+
+                <h3>Secure</h3>
+
+                <p>
+                    आपके documents और information की privacy का ध्यान।
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="service-icon">💰</div>
+
+                <h3>Affordable</h3>
+
+                <p>
+                    उचित और affordable service charges।
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="service-icon">😊</div>
+
+                <h3>Customer Support</h3>
+
+                <p>
+                    Customer की सहायता के लिए हमेशा तैयार।
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+
+    <section class="contact" id="contact">
+
+        <div class="section-title">
+
+            <h2>Contact Us</h2>
+
+            <p>
+                किसी भी service के लिए हमसे संपर्क करें।
+            </p>
+
+        </div>
+
+
+        <div class="contact-container">
+
+
+            <div class="contact-info">
+
+                <h3>Get In Touch</h3>
+                <p>
+    📍                 <b>Address:</b>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Bhimtal%2C%20Nainital%2C%20Uttarakhand%2C%20India" target="_blank">
+                        Bhimtal, Nainital, Uttarakhand, India
+                    </a>
+                </p>
+                
+                
+                    💬 <b>WhatsApp:</b> +91 85281 74648
+                </p>
+
+                <p>
+                    📞 <b>Call:</b> +91 94501 73189
+                </p>
+
+                <p>
+                    📧 <b>Email:</b> <a href="mailto:amandigitalservices@gmail.com">amandigitalservices@gmail.com</a>
+                </p>
+
+                <p>
+                    🕐 <b>Opening Time:</b> 9:00 AM - 8:00 PM
+                </p>
+
+                <a class="call-btn" href="tel:+919450173189">📞 Call Now</a>
+
+            </div>
+
+
+            <div class="contact-form">
+
+                <h3>Send Message</h3>
+
+                <form onsubmit="sendMessage(event)">
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Your Name"
+                        required
+                    >
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Your Mobile Number"
+                        required
+                    >
+
+                    <textarea
+                        id="message"
+                        placeholder="Your Message"
+                        required
+                    ></textarea>
+
+                    <button type="button" onclick="sendMessage(event)">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <h2>Aman Digital services</h2>
+
+        <p>
+            Your Trusted Digital Service Center
+        </p>
+
+        <p>
+            © 2026 Aman Digital services. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- WhatsApp Button -->
+
+    <a
+        class="whatsapp"
+        href="https://wa.me/918528174648?text=Hello%20Aman%20Digital%20Services%2C%20mujhe%20service%20ke%20baare%20mein%20jaankari%20chahiye."
+        target="_blank"
+        title="Chat on WhatsApp"
+    >
+        ☎
+    </a>
+
+
+    <!-- JavaScript -->
+
+    <script>
+
+        function getService(serviceName) {
+            let whatsappNumber = "918528174648";
+            let text =
+                "Hello Aman Digital Services\n\n" +
+                "Mujhe is service ki zarurat hai: " + serviceName +
+                "\nPlease mujhe price aur process bataiye.";
+
+            window.open(
+                "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(text),
+                "_blank"
+            );
+        }
+
+        function sendMessage(event) {
+
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let phone = document.getElementById("phone").value;
+            let message = document.getElementById("message").value;
+
+            let whatsappNumber = "918528174648";
+
+            let text =
+                "Hello Aman Digital services%0A%0A" +
+                "Name: " + name + "%0A" +
+                "Phone: " + phone + "%0A" +
+                "Message: " + message;
+
+            window.open(
+                "https://wa.me/" + whatsappNumber + "?text=" + text,
+                "_blank"
+            );
+
+        }
+
+    </script>
+
+</body>
+</html>
